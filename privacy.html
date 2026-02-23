@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Orca</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F7FAFB;
+    color: #374151;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: #0B1D33;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-bottom: 16px;
+  }
+  .logo svg { width: 28px; height: 28px; }
+  .logo span {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+    color: #fff;
+  }
+  header h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0B1D33;
+    margin: 40px 0 12px;
+  }
+  h2:first-of-type { margin-top: 0; }
+
+  p, li {
+    font-size: 15px;
+    color: #374151;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+  li {
+    margin-bottom: 6px;
+    padding-left: 4px;
+  }
+  li::marker { color: #2E8B9A; }
+
+  .highlight-box {
+    background: #E8F4F8;
+    border-left: 4px solid #2E8B9A;
+    border-radius: 0 12px 12px 0;
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+  .highlight-box p {
+    font-size: 14px;
+    color: #1A3A5C;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  a { color: #2E8B9A; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid #E5E7EB;
+    margin-top: 48px;
+  }
+  footer p {
+    font-size: 13px;
+    color: #9CA3AF;
+  }
+  footer a { color: #6B7280; }
+
+  .nav-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #2E8B9A;
+    text-decoration: none;
+    border: 1px solid #2E8B9A;
+    padding: 6px 16px;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .nav-link:hover {
+    background: #2E8B9A;
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <svg viewBox="0 0 100 100" fill="none">
+      <path d="M28 84 C30 68 34 52 40 38 C46 26 52 16 58 12 C61 10 63 12 64 16 C68 28 70 44 70 60 C70 68 70 76 68 84 Z" fill="#fff" />
+    </svg>
+    <span>Orca</span>
+  </a>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: February 2026</p>
+</header>
+
+<main>
+
+  <div class="highlight-box">
+    <p>The short version: Your memories are yours. We don't sell your data, we don't read your memories, and voice processing happens entirely on your device.</p>
+  </div>
+
+  <h2>1. What We Collect</h2>
+  <p>When you use Orca, we collect the following information:</p>
+  <ul>
+    <li><strong>Account information:</strong> Your name and email address when you create an account.</li>
+    <li><strong>Voice recordings:</strong> Processed on your device to extract text. Raw audio is never stored or transmitted to our servers.</li>
+    <li><strong>Screenshots:</strong> Stored locally and synced to your private cloud storage if you enable cloud sync.</li>
+    <li><strong>Memory content:</strong> The text of your memories, associated categories (Echos), dates, and tags.</li>
+    <li><strong>Usage data:</strong> Anonymous analytics about how you use the app (features used, session length) to improve Orca. We use Mixpanel for this. No memory content is included in analytics.</li>
+  </ul>
+
+  <h2>2. How We Use Your Data</h2>
+  <ul>
+    <li>To provide the Orca service: storing, organizing, and reminding you of your memories.</li>
+    <li>To improve the app: understanding which features are used and where people get stuck.</li>
+    <li>We <strong>never sell</strong> your personal data to third parties.</li>
+    <li>We <strong>never use</strong> your memory content for advertising.</li>
+    <li>We <strong>never share</strong> your memory content with other users unless you explicitly use a sharing feature.</li>
+  </ul>
+
+  <h2>3. Data Storage & Security</h2>
+  <ul>
+    <li>Your memories are stored on your device using Apple's encrypted storage.</li>
+    <li>If cloud sync is enabled, data is stored in Supabase (PostgreSQL) with encryption at rest (AES-256) and in transit (TLS 1.3).</li>
+    <li>Row Level Security ensures only you can access your data — not even Orca employees can read your memories.</li>
+    <li>Your account password is hashed using bcrypt and never stored in plain text.</li>
+  </ul>
+
+  <h2>4. Voice Processing</h2>
+  <p>Orca uses Apple's on-device Speech Recognition framework. Your voice is processed entirely on your iPhone. Audio data is never sent to Orca's servers or any third party. Only the resulting text transcription is stored.</p>
+
+  <h2>5. Your Rights</h2>
+  <ul>
+    <li><strong>Access:</strong> You can view all your data within the app at any time.</li>
+    <li><strong>Edit:</strong> You can modify any memory, Echo, or Ping at any time.</li>
+    <li><strong>Delete:</strong> You can delete individual memories or your entire account. Account deletion removes all data from our servers within 30 days.</li>
+    <li><strong>Export:</strong> Data export is planned for a future update.</li>
+  </ul>
+
+  <h2>6. Children's Privacy</h2>
+  <p>Orca is not designed for children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it.</p>
+
+  <h2>7. Changes to This Policy</h2>
+  <p>We may update this privacy policy from time to time. We will notify you of significant changes through the app or by email. Continued use of Orca after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>8. Contact</h2>
+  <p>Questions about this policy? Email us at <a href="mailto:support@orcadrop.app">support@orcadrop.app</a>.</p>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 Orca. All rights reserved.</p>
+  <a href="/terms.html" class="nav-link">Terms of Service →</a>
+</footer>
+
+</body>
+</html>
