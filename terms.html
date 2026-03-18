@@ -1,190 +1,315 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Terms of Service — Orca</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #F7FAFB;
-    color: #374151;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Orca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1D33;
+            --teal: #2A9D8F;
+            --teal-light: #3DBFB0;
+            --coral: #E76F51;
+            --white: #FFFFFF;
+        }
 
-  header {
-    background: #0B1D33;
-    padding: 32px 24px;
-    text-align: center;
-  }
-  .logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    margin-bottom: 16px;
-  }
-  .logo svg { width: 28px; height: 28px; }
-  .logo span {
-    font-family: 'Instrument Serif', serif;
-    font-size: 24px;
-    color: #fff;
-  }
-  header h1 {
-    font-family: 'Instrument Serif', serif;
-    font-size: 32px;
-    color: #fff;
-    font-weight: 400;
-    margin-bottom: 6px;
-  }
-  header p {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-  }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
-  main {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            min-height: 100vh;
+        }
 
-  h2 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #0B1D33;
-    margin: 40px 0 12px;
-  }
-  h2:first-of-type { margin-top: 0; }
+        nav {
+            padding: 20px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            position: sticky;
+            top: 0;
+            background: rgba(11,29,51,0.95);
+            backdrop-filter: blur(20px);
+            z-index: 10;
+        }
 
-  p, li {
-    font-size: 15px;
-    color: #374151;
-    margin-bottom: 12px;
-  }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
 
-  ul {
-    padding-left: 20px;
-    margin-bottom: 16px;
-  }
-  li {
-    margin-bottom: 6px;
-    padding-left: 4px;
-  }
-  li::marker { color: #2E8B9A; }
+        .nav-logo-text { font-weight: 500; font-size: 18px; color: var(--white); }
 
-  .highlight-box {
-    background: #E8F4F8;
-    border-left: 4px solid #2E8B9A;
-    border-radius: 0 12px 12px 0;
-    padding: 16px 20px;
-    margin: 24px 0;
-  }
-  .highlight-box p {
-    font-size: 14px;
-    color: #1A3A5C;
-    margin: 0;
-    font-weight: 500;
-  }
+        .nav-link {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-  a { color: #2E8B9A; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+        .nav-link:hover { color: var(--white); }
 
-  footer {
-    text-align: center;
-    padding: 32px 24px;
-    border-top: 1px solid #E5E7EB;
-    margin-top: 48px;
-  }
-  footer p {
-    font-size: 13px;
-    color: #9CA3AF;
-  }
-  footer a { color: #6B7280; }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
 
-  .nav-link {
-    display: inline-block;
-    margin-top: 12px;
-    font-size: 13px;
-    color: #2E8B9A;
-    text-decoration: none;
-    border: 1px solid #2E8B9A;
-    padding: 6px 16px;
-    border-radius: 100px;
-    transition: all 0.2s;
-  }
-  .nav-link:hover {
-    background: #2E8B9A;
-    color: #fff;
-    text-decoration: none;
-  }
-</style>
+        .page-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--teal-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(40px, 6vw, 64px);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        h1 em { font-style: italic; color: var(--teal-light); }
+
+        .updated {
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+            font-family: 'DM Mono', monospace;
+            margin-bottom: 48px;
+        }
+
+        .tldr {
+            background: rgba(42,157,143,0.1);
+            border: 1px solid rgba(42,157,143,0.25);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 56px;
+        }
+
+        .tldr-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--teal-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .tldr p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .section {
+            margin-bottom: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+
+        ul { list-style: none; margin-bottom: 16px; }
+
+        ul li {
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.75;
+            font-weight: 300;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+        }
+
+        strong { color: var(--white); font-weight: 500; }
+        a { color: var(--teal-light); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .highlight {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .pro-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(42,157,143,0.15);
+            border: 1px solid rgba(42,157,143,0.3);
+            color: var(--teal-light);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-family: 'DM Mono', monospace;
+            margin-bottom: 16px;
+        }
+
+        footer {
+            padding: 32px 48px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-links { display: flex; gap: 24px; list-style: none; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; }
+        .footer-links a:hover { color: rgba(255,255,255,0.7); }
+        .footer-copy { font-size: 13px; color: rgba(255,255,255,0.25); }
+
+        @media (max-width: 768px) {
+            nav { padding: 16px 24px; }
+            footer { padding: 24px; flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <a href="/" class="logo">
-    <svg viewBox="0 0 100 100" fill="none">
-      <path d="M28 84 C30 68 34 52 40 38 C46 26 52 16 58 12 C61 10 63 12 64 16 C68 28 70 44 70 60 C70 68 70 76 68 84 Z" fill="#fff" />
-    </svg>
-    <span>Orca</span>
-  </a>
-  <h1>Terms of Service</h1>
-  <p>Last updated: February 2026</p>
-</header>
+<nav>
+    <a href="/" class="nav-logo">
+        <svg width="28" height="34" viewBox="0 0 100 120" fill="none">
+            <defs>
+                <linearGradient id="nav-grad" x1="0" y1="0" x2="100" y2="120" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#0B1D33"/>
+                    <stop offset="100%" stop-color="#1A5C55"/>
+                </linearGradient>
+            </defs>
+            <rect width="100" height="120" rx="22" fill="url(#nav-grad)"/>
+            <path d="M58 18 C58 18 36 38 34 62 C33 76 38 88 50 96 C62 88 67 76 66 62 C64 38 58 18 58 18 Z" fill="white"/>
+        </svg>
+        <span class="nav-logo-text">Orca</span>
+    </a>
+    <a href="/" class="nav-link">← Back to home</a>
+</nav>
 
-<main>
+<div class="container">
+    <div class="page-label">Legal</div>
+    <h1>Terms of <em>Service</em></h1>
+    <div class="updated">Last updated: March 2026</div>
 
-  <div class="highlight-box">
-    <p>The short version: You own your memories. We provide the tool. Be a good human. Orca is a memory aid, not a critical system — always have a backup plan for important dates.</p>
-  </div>
+    <div class="tldr">
+        <div class="tldr-label">The short version</div>
+        <p>You own your memories. We provide the tool. Be a good human. Orca is a memory aid — always have a backup plan for critical dates and deadlines.</p>
+    </div>
 
-  <h2>1. Acceptance</h2>
-  <p>By creating an Orca account, you agree to these terms. If you don't agree, please don't use the app.</p>
+    <div class="section">
+        <h2>1. Acceptance</h2>
+        <p>By creating an Orca account or using the Orca app, you agree to these Terms of Service. If you don't agree, please don't use the app. These terms apply to all users of Orca, including free and paid subscribers.</p>
+    </div>
 
-  <h2>2. What Orca Does</h2>
-  <p>Orca is a personal memory capture and retrieval app. You speak or type information, and Orca stores, organizes, and reminds you of it. Orca uses on-device AI to categorize your memories. This processing is not perfect and may make errors — you can always correct them.</p>
+    <div class="section">
+        <h2>2. What Orca Does</h2>
+        <p>Orca is a personal memory capture and retrieval app. You speak, type, or photograph information, and Orca stores, organizes, and reminds you of it. Orca uses on-device AI (Sonar) to categorize your memories. This processing is not perfect and may make errors — you can always correct classifications manually.</p>
+    </div>
 
-  <h2>3. Your Content</h2>
-  <ul>
-    <li><strong>You own everything</strong> you put into Orca. We don't claim any rights to your memories.</li>
-    <li>You're responsible for the content you store. Don't use Orca to store illegal content.</li>
-    <li>We may analyze anonymized, aggregated usage patterns to improve the service, but we will never access, read, or share your individual memories.</li>
-  </ul>
+    <div class="section">
+        <h2>3. Your Content</h2>
+        <ul>
+            <li><strong>You own everything</strong> you put into Orca. We don't claim any rights to your memories.</li>
+            <li>You're responsible for the content you store. Don't use Orca to store illegal content.</li>
+            <li>We may analyze anonymized, aggregated usage patterns to improve the service, but we will never access, read, or share your individual memories.</li>
+        </ul>
+    </div>
 
-  <h2>4. Account Responsibilities</h2>
-  <ul>
-    <li>Keep your password secure. We're not responsible for unauthorized access due to compromised passwords.</li>
-    <li>One account per person.</li>
-    <li>You must be at least 13 years old to use Orca.</li>
-  </ul>
+    <div class="section">
+        <h2>4. Account Responsibilities</h2>
+        <ul>
+            <li>Keep your account credentials secure. We're not responsible for unauthorized access due to compromised credentials.</li>
+            <li>One account per person.</li>
+            <li>You must be at least 13 years old to use Orca.</li>
+        </ul>
+    </div>
 
-  <h2>5. Service Availability</h2>
-  <p>Orca is provided "as is." We aim for high availability but don't guarantee uninterrupted service. The app works offline for core features (capture, browse, local reminders). Cloud sync requires internet access.</p>
+    <div class="section">
+        <h2>5. Free & Pro Plans</h2>
+        <div class="pro-badge">✦ Orca Pro</div>
+        <p>Orca offers a free tier with unlimited memory capture and local storage. Orca Pro is a paid subscription that unlocks additional features including cloud sync across devices, advanced Sonar AI, and future premium features.</p>
+        <ul>
+            <li>Orca Pro subscriptions are billed monthly or annually through the App Store.</li>
+            <li>Subscriptions auto-renew unless cancelled at least 24 hours before the renewal date.</li>
+            <li>You can manage and cancel subscriptions in your App Store account settings.</li>
+            <li>No refunds are provided for partial subscription periods, except as required by law.</li>
+            <li>Pricing for Orca Pro will be clearly communicated before purchase.</li>
+        </ul>
+    </div>
 
-  <h2>6. Limitation of Liability</h2>
-  <p>Orca is a memory aid, not a critical system. Don't rely solely on Orca for time-sensitive obligations such as medical appointments, legal deadlines, or financial due dates. We are not liable for missed reminders or lost data, though we work hard to prevent both.</p>
+    <div class="section">
+        <h2>6. Service Availability</h2>
+        <p>Orca is provided "as is." We aim for high availability but don't guarantee uninterrupted service. Core features — capture, browse, and local reminders — work offline. Cloud sync requires an internet connection.</p>
+    </div>
 
-  <h2>7. Early Access</h2>
-  <p>Orca is currently in early access. Features may change, and the service may have bugs. By using Orca during early access, you understand this and agree to help us improve by providing feedback. Early access is free — pricing for future premium features will be communicated in advance.</p>
+    <div class="section">
+        <h2>7. Limitation of Liability</h2>
+        <div class="highlight">
+            <p style="margin:0; color:rgba(255,255,255,0.8);">Orca is a memory aid, not a critical system. <strong>Don't rely solely on Orca for time-sensitive obligations</strong> such as medical appointments, legal deadlines, or financial due dates. We are not liable for missed reminders or lost data, though we work hard to prevent both.</p>
+        </div>
+    </div>
 
-  <h2>8. Termination</h2>
-  <p>You can delete your account at any time from Settings within the app. We may terminate accounts that violate these terms. Upon termination, your data is deleted from our servers within 30 days.</p>
+    <div class="section">
+        <h2>8. Termination</h2>
+        <p>You can delete your account at any time from Settings within the app. Upon deletion, your data is removed from our servers within 30 days. We may terminate accounts that violate these terms, with or without notice.</p>
+    </div>
 
-  <h2>9. Changes</h2>
-  <p>We may update these terms from time to time. We'll notify you of significant changes through the app. Continued use of Orca after changes constitutes acceptance of the updated terms.</p>
+    <div class="section">
+        <h2>9. Changes</h2>
+        <p>We may update these terms from time to time. We'll notify you of significant changes through the app or by email. Continued use of Orca after changes constitutes acceptance of the updated terms.</p>
+    </div>
 
-  <h2>10. Contact</h2>
-  <p>Questions about these terms? Email us at <a href="mailto:support@orcadrop.app">support@orcadrop.app</a>.</p>
-
-</main>
+    <div class="section">
+        <h2>10. Contact</h2>
+        <p>Questions about these terms? Email us at <a href="/cdn-cgi/l/email-protection#dba8aeababb4a9af9bb4a9b8babfa9b4abf5baabab"><span class="__cf_email__" data-cfemail="a3d0d6d3d3ccd1d7e3ccd1c0c2c7d1ccd38dc2d3d3">[email&#160;protected]</span></a>.</p>
+    </div>
+</div>
 
 <footer>
-  <p>&copy; 2026 Orca. All rights reserved.</p>
-  <a href="/privacy.html" class="nav-link">← Privacy Policy</a>
-</footer>
-
-</body>
-</html>
+    <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+        <svg width="20" height="24" viewBox="0 0 100 120" fill="none">
+            <rect width="100" height="120" rx="22" fill="#1A3A5C"/>
+            <path d="M58 18 C58 18 36 38 34 62 C33 76 38 88 50 96 C62 88 67 76 66 62 C64 38 58 18 58 18 Z" fill="white" opacity="0.6"/>
+        </svg>
+        <span style="font-size:15px;font-weight:500;color:rgba(255,255,255,0.5);">Orca</span>
+    </a>
+    <ul class="footer-links">
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/cdn-cgi/l/email
