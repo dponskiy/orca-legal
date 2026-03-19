@@ -113,11 +113,10 @@
         .phone-fab { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: 16px; padding-bottom: 8px; }
         .phone-fab-btn {
             width: 56px; height: 56px;
-            background: linear-gradient(160deg, #0B1D33 0%, #1A5C55 100%);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            border-radius: 14px;
             box-shadow: 0 8px 24px rgba(42,157,143,0.4); overflow: hidden;
         }
-        .phone-fab-btn img { width: 40px; height: 40px; object-fit: contain; }
+        .phone-fab-btn img { width: 56px; height: 56px; object-fit: cover; display: block; }
         .phone-fab-hint { font-size: 9px; color: rgba(255,255,255,0.35); font-family: 'DM Mono', monospace; }
 
         .bubble {
@@ -352,7 +351,7 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#how">How it works</a></li>
         <li><a href="#echos">Echos</a></li>
-        <li><a href="mailto:support@orcadrop.app">Support</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#295a5c5959465b5d69465b4a484d5b465907485959">Support</a></li>
         <li><a href="#download" class="nav-cta">Download</a></li>
     </ul>
 </nav>
@@ -469,6 +468,21 @@
             <div class="recipe-demo-body">
                 <div class="recipe-demo-title">🍽 Chicken Tikka Masala</div>
                 <div class="recipe-demo-meta">Prep: 20m · Cook: 40m · Serves: 4</div>
+                <div class="recipe-demo-label">Instructions</div>
+                <div style="margin-bottom:14px;">
+                    <div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+                        <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-light);min-width:18px;">1.</span>
+                        <span style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;">Marinate chicken in yogurt and spices for 1 hour.</span>
+                    </div>
+                    <div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+                        <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-light);min-width:18px;">2.</span>
+                        <span style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;">Grill or broil chicken until charred. Set aside.</span>
+                    </div>
+                    <div style="display:flex;gap:10px;padding:6px 0;">
+                        <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-light);min-width:18px;">3.</span>
+                        <span style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;">Simmer tomatoes and cream into a rich sauce.</span>
+                    </div>
+                </div>
                 <div class="recipe-demo-label">Ingredients</div>
                 <div class="recipe-ingredient">
                     <div class="ingredient-check done"></div>
@@ -594,12 +608,12 @@
     <ul class="footer-links">
         <li><a href="/privacy">Privacy Policy</a></li>
         <li><a href="/terms">Terms of Service</a></li>
-        <li><a href="mailto:support@orcadrop.app">Contact</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#23505653534c5157634c51404247514c530d425353">Contact</a></li>
     </ul>
     <div class="footer-copy">© 2026 Orca. All rights reserved.</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, i) => {
@@ -614,10 +628,4 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-</script>
-</body>
-</html>
+ 
