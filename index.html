@@ -111,14 +111,9 @@
         .phone-memory-text { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.4; }
         .phone-memory-date { font-size: 10px; color: var(--coral); margin-top: 6px; font-family: 'DM Mono', monospace; }
         .phone-fab { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-top: 16px; padding-bottom: 8px; }
-        .phone-fab-btn {
-            width: 56px; height: 56px;
-            border-radius: 14px;
-            box-shadow: 0 8px 24px rgba(42,157,143,0.4); overflow: hidden;
-        }
+        .phone-fab-btn { width: 56px; height: 56px; border-radius: 14px; box-shadow: 0 8px 24px rgba(42,157,143,0.4); overflow: hidden; }
         .phone-fab-btn img { width: 56px; height: 56px; object-fit: cover; display: block; }
         .phone-fab-hint { font-size: 9px; color: rgba(255,255,255,0.35); font-family: 'DM Mono', monospace; }
-
         .bubble {
             position: absolute; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
             border-radius: 100px; padding: 10px 16px; font-size: 13px; color: rgba(255,255,255,0.7);
@@ -164,119 +159,123 @@
         .feature-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 300; }
         .feature-tag { display:inline-block; margin-top:16px; font-size:11px; font-family:'DM Mono',monospace; color:var(--teal-light); background:rgba(42,157,143,0.1); padding:4px 10px; border-radius:100px; }
 
-        /* RECIPE DEMO */
-        .recipe-section {
-            padding: 100px 48px;
-            background: rgba(255,255,255,0.02);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+        /* SPLIT SECTIONS */
+        .split-section { padding: 100px 48px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .split-section.alt { background: rgba(255,255,255,0.02); }
+        .split-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .split-inner.reverse { direction: rtl; }
+        .split-inner.reverse > * { direction: ltr; }
+        .split-demo { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; overflow: hidden; }
+
+        /* DEMO SHARED */
+        .demo-header { background: rgba(255,255,255,0.06); padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .echo-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(42,157,143,0.15); border-radius: 100px; padding: 4px 10px; font-size: 11px; color: var(--teal-light); font-family: 'DM Mono', monospace; }
+        .date-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(231,111,81,0.15); border-radius: 100px; padding: 4px 10px; font-size: 11px; color: var(--coral); font-family: 'DM Mono', monospace; }
+        .demo-body { padding: 18px; }
+
+        /* TRAVEL MAP */
+        .travel-hotel-card { background: rgba(255,255,255,0.06); border-radius: 14px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.08); }
+        .travel-map { height: 130px; background: linear-gradient(135deg, #1a3a2a 0%, #0d2a1a 50%, #162a20 100%); position: relative; overflow: hidden; }
+        .map-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 20px 20px; }
+        .map-road-h { position: absolute; height: 3px; background: rgba(255,255,255,0.12); border-radius: 2px; }
+        .map-road-v { position: absolute; width: 3px; background: rgba(255,255,255,0.12); border-radius: 2px; }
+        .map-park { position: absolute; border-radius: 8px; background: rgba(82,183,136,0.2); border: 1px solid rgba(82,183,136,0.3); }
+        .map-water { position: absolute; border-radius: 50%; background: rgba(42,100,180,0.3); }
+        .map-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); display: flex; flex-direction: column; align-items: center; }
+        .map-pin-dot { width: 28px; height: 28px; background: var(--coral); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); border: 2px solid white; box-shadow: 0 4px 12px rgba(231,111,81,0.5); position: relative; }
+        .map-pin-inner { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 10px; height: 10px; background: white; border-radius: 50%; }
+        .map-label { margin-top: 6px; background: rgba(0,0,0,0.7); color: white; font-size: 10px; padding: 3px 8px; border-radius: 100px; white-space: nowrap; font-family: 'DM Mono', monospace; }
+        .travel-hotel-info { padding: 14px; }
+        .travel-hotel-name { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+        .travel-hotel-addr { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+        .travel-dates { display: flex; align-items: center; gap: 8px; }
+        .travel-date-box { flex: 1; }
+        .travel-date-label { font-size: 10px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; margin-bottom: 2px; }
+        .travel-date-value { font-size: 14px; font-weight: 500; color: var(--white); }
+        .travel-date-year { font-size: 11px; color: rgba(255,255,255,0.4); }
+        .travel-arrow { color: rgba(255,255,255,0.3); font-size: 16px; }
+        .travel-reminder { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: rgba(42,157,143,0.08); border-top: 1px solid rgba(42,157,143,0.15); }
+        .travel-reminder-dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; flex-shrink: 0; }
+        .travel-reminder-text { font-size: 12px; color: rgba(255,255,255,0.6); }
+        .travel-reminder-badge { margin-left: auto; font-size: 10px; font-family: 'DM Mono', monospace; color: var(--teal-light); background: rgba(42,157,143,0.15); padding: 3px 8px; border-radius: 100px; white-space: nowrap; }
+
+        /* PEOPLE */
+        .people-avatar { width: 52px; height: 52px; background: rgba(82,183,136,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 18px; color: var(--seafoam); margin: 0 auto 8px; }
+        .people-name { font-size: 17px; font-weight: 500; color: var(--white); text-align: center; margin-bottom: 4px; }
+        .people-meta { font-size: 12px; color: rgba(255,255,255,0.4); text-align: center; margin-bottom: 16px; font-family: 'DM Mono', monospace; }
+        .people-occasions { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+        .occasion-pill { display: inline-flex; flex-direction: column; align-items: center; padding: 6px 12px; border-radius: 100px; font-size: 11px; font-weight: 500; border: 1px solid rgba(42,157,143,0.3); }
+        .occasion-pill.active { background: var(--teal); border-color: var(--teal); color: white; }
+        .occasion-pill.inactive { background: rgba(42,157,143,0.08); color: var(--teal-light); }
+        .occasion-sub { font-size: 9px; opacity: 0.75; margin-top: 1px; }
+        .people-budget { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+        .people-budget-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+        .people-budget-label { font-size: 12px; color: rgba(255,255,255,0.5); }
+        .people-budget-value { font-size: 12px; font-weight: 500; color: var(--white); }
+        .budget-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+        .budget-fill { height: 100%; background: var(--teal); border-radius: 2px; }
+        .people-gift { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+        .gift-check { width: 20px; height: 20px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+        /* WORKOUT */
+        .workout-week { display: flex; gap: 6px; margin-bottom: 16px; }
+        .week-day { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .week-circle { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; }
+        .week-circle.done { background: var(--teal); }
+        .week-circle.today { border: 1.5px solid rgba(42,157,143,0.5); background: rgba(42,157,143,0.1); }
+        .week-circle.empty { background: rgba(255,255,255,0.06); }
+        .week-label { font-size: 9px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; }
+        .workout-exercise { margin-bottom: 14px; }
+        .workout-ex-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+        .workout-ex-name { font-size: 14px; font-weight: 500; color: var(--white); }
+        .workout-ex-badge { font-size: 10px; font-family: 'DM Mono', monospace; background: rgba(42,157,143,0.15); color: var(--teal-light); padding: 3px 8px; border-radius: 100px; }
+        .workout-ex-badge.pr { background: rgba(231,177,51,0.15); color: #EFB627; }
+        .workout-sets-table { width: 100%; border-collapse: collapse; }
+        .workout-sets-table th { font-size: 10px; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.35); text-align: left; padding: 0 0 6px; }
+        .workout-sets-table th:last-child { text-align: right; }
+        .workout-sets-table td { font-size: 13px; color: rgba(255,255,255,0.7); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .workout-sets-table td:last-child { text-align: right; color: var(--white); font-weight: 500; }
+        .workout-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 12px 0; }
+
+        /* SPORTS */
+        .sports-team-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+        .sports-team-logo { width: 36px; height: 36px; background: rgba(231,111,81,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .sports-team-name { font-size: 16px; font-weight: 500; color: var(--white); }
+        .sports-team-record { font-size: 11px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; }
+        .sports-league-badge { margin-left: auto; font-size: 10px; font-family: 'DM Mono', monospace; background: rgba(255,255,255,0.08); padding: 3px 8px; border-radius: 100px; color: rgba(255,255,255,0.5); }
+        .sports-next { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
+        .sports-next-label { font-size: 10px; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; margin-bottom: 6px; }
+        .sports-next-game { display: flex; align-items: center; justify-content: space-between; }
+        .sports-next-opponent { font-size: 14px; font-weight: 500; color: var(--white); }
+        .sports-next-time { font-size: 11px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; margin-top: 2px; }
+        .sports-countdown { background: var(--coral); color: white; font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 100px; }
+        .sports-recent-label { font-size: 10px; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; margin-bottom: 8px; }
+        .sports-result { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .sports-result-badge { width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+        .sports-result-badge.w { background: rgba(82,183,136,0.2); color: var(--seafoam); }
+        .sports-result-badge.l { background: rgba(231,111,81,0.2); color: var(--coral); }
+        .sports-result-opponent { font-size: 13px; color: rgba(255,255,255,0.65); flex: 1; }
+        .sports-result-score { font-size: 13px; font-weight: 500; color: var(--white); }
+
+        /* RECIPE */
+        .recipe-section { padding: 100px 48px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .recipe-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .recipe-text { }
-        .recipe-demo {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 24px;
-            overflow: hidden;
-        }
-        .recipe-demo-header {
-            background: rgba(255,255,255,0.06);
-            padding: 16px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .recipe-demo-url {
-            font-family: 'DM Mono', monospace;
-            font-size: 12px;
-            color: rgba(255,255,255,0.4);
-            flex: 1;
-            background: rgba(255,255,255,0.05);
-            padding: 8px 12px;
-            border-radius: 8px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .recipe-demo-btn {
-            background: var(--teal);
-            color: white;
-            font-size: 12px;
-            font-weight: 500;
-            padding: 8px 14px;
-            border-radius: 8px;
-            white-space: nowrap;
-        }
+        .recipe-demo { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; overflow: hidden; }
+        .recipe-demo-header { background: rgba(255,255,255,0.06); padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 10px; }
+        .recipe-demo-url { font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(255,255,255,0.4); flex: 1; background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .recipe-demo-btn { background: var(--teal); color: white; font-size: 12px; font-weight: 500; padding: 8px 14px; border-radius: 8px; white-space: nowrap; }
         .recipe-demo-body { padding: 20px; }
-        .recipe-demo-title {
-            font-family: 'Instrument Serif', serif;
-            font-size: 20px;
-            color: var(--white);
-            margin-bottom: 6px;
-        }
-        .recipe-demo-meta {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 16px;
-        }
-        .recipe-demo-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            color: var(--teal-light);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        .recipe-ingredient {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+        .recipe-demo-title { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--white); margin-bottom: 6px; }
+        .recipe-demo-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+        .recipe-demo-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal-light); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+        .recipe-ingredient { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .recipe-ingredient:last-child { border-bottom: none; }
-        .ingredient-check {
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            border: 1.5px solid rgba(42,157,143,0.4);
-            flex-shrink: 0;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .ingredient-check.done {
-            background: var(--teal);
-            border-color: var(--teal);
-        }
-        .ingredient-check.done::after {
-            content: '✓';
-            color: white;
-            font-size: 10px;
-            font-weight: bold;
-        }
-        .ingredient-text {
-            font-size: 13px;
-            color: rgba(255,255,255,0.7);
-        }
-        .ingredient-text.done {
-            text-decoration: line-through;
-            color: rgba(255,255,255,0.3);
-        }
-        .recipe-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-        .recipe-arrow-line {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            color: var(--teal-light);
-            font-family: 'DM Mono', monospace;
-        }
+        .ingredient-check { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid rgba(42,157,143,0.4); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .ingredient-check.done { background: var(--teal); border-color: var(--teal); }
+        .ingredient-check.done::after { content: '✓'; color: white; font-size: 10px; font-weight: bold; }
+        .ingredient-text { font-size: 13px; color: rgba(255,255,255,0.7); }
+        .ingredient-text.done { text-decoration: line-through; color: rgba(255,255,255,0.3); }
+        .recipe-footer { display: flex; align-items: center; justify-content: center; padding: 14px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; color: var(--teal-light); font-family: 'DM Mono', monospace; gap: 8px; }
 
         .how-section { padding:100px 48px; background:rgba(255,255,255,0.02); border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05); }
         .how-inner { max-width:1100px; margin:0 auto; }
@@ -320,7 +319,7 @@
         .footer-links a:hover { color:rgba(255,255,255,0.7); }
         .footer-copy { font-size:13px; color:rgba(255,255,255,0.25); }
 
-        .reveal { opacity:1; transform:translateY(0); transition:opacity 0.6s ease,transform 0.6s ease; }
+        .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease,transform 0.6s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
 
         @media (max-width:768px) {
@@ -332,8 +331,9 @@
             .feature-card.large { grid-column:span 1; }
             .steps { grid-template-columns:1fr; gap:32px; }
             .quotes-grid { grid-template-columns:1fr; }
-            .recipe-section { padding:64px 24px; }
-            .recipe-inner { grid-template-columns:1fr; gap:40px; }
+            .recipe-section,.split-section { padding:64px 24px; }
+            .recipe-inner,.split-inner { grid-template-columns:1fr; gap:40px; }
+            .split-inner.reverse { direction: ltr; }
             .how-section,.echos-section,.quotes-section,.cta-section { padding:64px 24px; }
             footer { padding:32px 24px; flex-direction:column; align-items:flex-start; }
             .bubble { display:none; }
@@ -351,7 +351,7 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#how">How it works</a></li>
         <li><a href="#echos">Echos</a></li>
-        <li><a href="mailto:support@orcadrop.app">Support</a></li>
+        <li><a href="/support">Support</a></li>
         <li><a href="#download" class="nav-cta">Download</a></li>
     </ul>
 </nav>
@@ -372,34 +372,31 @@
         </a>
         <a href="#how" class="btn-secondary">See how it works →</a>
     </div>
-
     <div class="hero-phone">
         <div class="bubble bubble-left">🎂 Mom's birthday Aug 15</div>
-        <div class="bubble bubble-left2">✈️ Flight March 18 · in 2 days</div>
+        <div class="bubble bubble-left2">✈️ Flight Apr 16 · in 2 days</div>
         <div class="bubble bubble-right">🔔 Dentist tomorrow at 2pm</div>
         <div class="phone-frame">
             <div class="phone-notch"></div>
             <div class="phone-screen">
                 <div class="phone-greeting">Good morning</div>
-                <div class="phone-sub">9 memories · 65°F ⛅</div>
+                <div class="phone-sub">43 memories · 83°F ⛅</div>
                 <div class="phone-memory">
                     <div class="phone-memory-header"><span class="phone-memory-emoji">✈️</span><span class="phone-memory-echo">TRAVEL</span></div>
-                    <div class="phone-memory-text">Flight to London, confirmation PX7732</div>
-                    <div class="phone-memory-date">📅 Mar 18 · in 2 days</div>
+                    <div class="phone-memory-text">Kimpton Gray Hotel · Check-in Apr 16</div>
+                    <div class="phone-memory-date">🔔 Reminder Apr 15 at noon</div>
                 </div>
                 <div class="phone-memory">
-                    <div class="phone-memory-header"><span class="phone-memory-emoji">🍳</span><span class="phone-memory-echo">COOKING</span></div>
-                    <div class="phone-memory-text">Tikka Masala · 6 ingredients saved</div>
+                    <div class="phone-memory-header"><span class="phone-memory-emoji">💪</span><span class="phone-memory-echo">WORKOUT</span></div>
+                    <div class="phone-memory-text">Bench 185×4, 155×3 · Run 5mi in 45min</div>
                 </div>
                 <div class="phone-memory">
-                    <div class="phone-memory-header"><span class="phone-memory-emoji">💊</span><span class="phone-memory-echo">HEALTH</span></div>
-                    <div class="phone-memory-text">Dentist — bring insurance card</div>
-                    <div class="phone-memory-date">🔔 Tomorrow at 2:00 PM</div>
+                    <div class="phone-memory-header"><span class="phone-memory-emoji">🎁</span><span class="phone-memory-echo">GIFTS</span></div>
+                    <div class="phone-memory-text">Get Cara headphones for her birthday</div>
+                    <div class="phone-memory-date">📅 Dec 8 · in 251d</div>
                 </div>
                 <div class="phone-fab">
-                    <div class="phone-fab-btn">
-                        <img src="icon-60.png" alt="Orca">
-                    </div>
+                    <div class="phone-fab-btn"><img src="icon-60.png" alt="Orca"></div>
                     <div class="phone-fab-hint">↑ swipe up</div>
                 </div>
             </div>
@@ -435,86 +432,244 @@
             <div class="feature-desc">Not vague reminders — precise pings. Daily, weekly, monthly, or one-time. Orca reminds you exactly when it matters.</div>
         </div>
         <div class="feature-card reveal">
-            <div class="feature-icon">📅</div>
-            <div class="feature-title">Date ranges</div>
-            <div class="feature-desc">"Vacation from June 3 to June 10" — Orca detects both dates and shows your trip across the calendar. No manual entry.</div>
-        </div>
-        <div class="feature-card reveal">
             <div class="feature-icon">📷</div>
             <div class="feature-title">Screenshot & extract</div>
-            <div class="feature-desc">Snap a photo of a menu, whiteboard, or sign. Orca extracts the text and turns it into a searchable memory.</div>
+            <div class="feature-desc">Snap a hotel confirmation, flight itinerary, or recipe. Orca reads it, saves it, and reminds you at exactly the right time.</div>
+        </div>
+        <div class="feature-card reveal">
+            <div class="feature-icon">🔍</div>
+            <div class="feature-title">Search everything</div>
+            <div class="feature-desc">Search by person, echo, or keyword — even from iPhone Spotlight. Your memories are always one tap away.</div>
         </div>
     </div>
 </section>
 
-<!-- RECIPE DEMO -->
+<!-- TRAVEL -->
+<div class="split-section alt">
+    <div class="split-inner">
+        <div class="split-text reveal">
+            <div class="section-label">Travel</div>
+            <h2 class="section-title">Screenshot a hotel.<br><em>Trip sorted.</em></h2>
+            <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300;margin-top:16px;">Snap a photo of any hotel confirmation or flight itinerary. Orca reads the check-in date, hotel name, and address — then sets a reminder for noon the day before you arrive.</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;margin-top:12px;">Flight route maps, hotel mini maps with directions, and day-by-day trip view all built in.</p>
+        </div>
+        <div class="split-demo reveal">
+            <div class="demo-header">
+                <span class="echo-tag">✈️ Travel</span>
+                <span class="date-tag">📅 Apr 16, 2026</span>
+            </div>
+            <div class="demo-body">
+                <div class="travel-hotel-card">
+                    <div class="travel-map">
+                        <div class="map-grid"></div>
+                        <div class="map-road-h" style="top:40%;left:0;right:0;"></div>
+                        <div class="map-road-h" style="top:65%;left:0;right:0;opacity:0.6;"></div>
+                        <div class="map-road-v" style="left:30%;top:0;bottom:0;"></div>
+                        <div class="map-road-v" style="left:60%;top:0;bottom:0;opacity:0.6;"></div>
+                        <div class="map-park" style="top:10%;left:65%;width:30%;height:25%;"></div>
+                        <div class="map-water" style="top:55%;right:-5%;width:40%;height:50%;opacity:0.6;border-radius:50%;"></div>
+                        <div class="map-pin">
+                            <div class="map-pin-dot"><div class="map-pin-inner"></div></div>
+                            <div class="map-label">Kimpton Gray Hotel</div>
+                        </div>
+                    </div>
+                    <div class="travel-hotel-info">
+                        <div class="travel-hotel-name">🏨 Kimpton Gray Hotel</div>
+                        <div class="travel-hotel-addr">122 W. Monroe Street, Chicago, IL</div>
+                        <div class="travel-dates">
+                            <div class="travel-date-box">
+                                <div class="travel-date-label">Check-in</div>
+                                <div class="travel-date-value">Thu, Apr 16</div>
+                                <div class="travel-date-year">2026</div>
+                            </div>
+                            <div class="travel-arrow">→</div>
+                            <div class="travel-date-box" style="text-align:right;">
+                                <div class="travel-date-label">Check-out</div>
+                                <div class="travel-date-value">Sat, Apr 18</div>
+                                <div class="travel-date-year">2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="travel-reminder">
+                    <div class="travel-reminder-dot"></div>
+                    <div class="travel-reminder-text">Reminder · Thu, Apr 16 at 12:00 PM</div>
+                    <div class="travel-reminder-badge">day before</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PEOPLE + GIFTS -->
+<div class="split-section">
+    <div class="split-inner reverse">
+        <div class="split-text reveal">
+            <div class="section-label">People & Gifts</div>
+            <h2 class="section-title">Never forget the people<br><em>who matter.</em></h2>
+            <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300;margin-top:16px;">Birthdays, anniversaries, gift ideas, budgets, and countdowns — all tracked automatically. Mention someone's name and Orca links it to their profile instantly.</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;margin-top:12px;">Mother's Day, Christmas, Valentine's Day, Graduation and more — with gift tracking and budget bars for every occasion.</p>
+        </div>
+        <div class="split-demo reveal">
+            <div class="demo-header"><span class="echo-tag">👥 People</span></div>
+            <div class="demo-body">
+                <div class="people-avatar">CA</div>
+                <div class="people-name">Cara</div>
+                <div class="people-meta">Wife · Birthday Dec 8 · in 251d</div>
+                <div class="people-occasions">
+                    <div class="occasion-pill active">Birthday<div class="occasion-sub">Dec 8 · 251d</div></div>
+                    <div class="occasion-pill inactive">Christmas<div class="occasion-sub">Dec 25 · 268d</div></div>
+                    <div class="occasion-pill inactive">Anniversary<div class="occasion-sub">Aug 5 · 126d</div></div>
+                </div>
+                <div class="people-budget">
+                    <div class="people-budget-row">
+                        <span class="people-budget-label">Birthday budget</span>
+                        <span class="people-budget-value">$500 of $600</span>
+                    </div>
+                    <div class="budget-bar"><div class="budget-fill" style="width:83%;"></div></div>
+                </div>
+                <div class="people-gift">
+                    <div class="gift-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.5);text-decoration:line-through;flex:1;">Golden Goose Shoes</span>
+                    <span style="font-size:12px;color:var(--teal-light);font-weight:500;">$500</span>
+                </div>
+                <div class="people-gift">
+                    <div style="width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(42,157,143,0.4);flex-shrink:0;"></div>
+                    <span style="font-size:13px;color:rgba(255,255,255,0.75);flex:1;">Silk pillowcase</span>
+                    <span style="font-size:11px;color:rgba(255,255,255,0.35);">idea</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- WORKOUT -->
+<div class="split-section alt">
+    <div class="split-inner">
+        <div class="split-text reveal">
+            <div class="section-label">Workout</div>
+            <h2 class="section-title">Log workouts<br><em>by voice.</em></h2>
+            <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300;margin-top:16px;">Say "bench press 185 pounds four times, then 155 three times" and Orca parses every set, rep, and weight automatically. No app to open. No logging screens.</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;margin-top:12px;">50+ exercises recognized. PRs detected automatically. Cardio, lifting, bodyweight — all supported.</p>
+        </div>
+        <div class="split-demo reveal">
+            <div class="demo-header"><span class="echo-tag">💪 Workout</span><span style="margin-left:auto;font-size:11px;color:rgba(255,255,255,0.4);font-family:'DM Mono',monospace;">Today</span></div>
+            <div class="demo-body">
+                <div class="workout-week">
+                    <div class="week-day"><div class="week-circle done"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="week-label">M</div></div>
+                    <div class="week-day"><div class="week-circle empty"></div><div class="week-label">T</div></div>
+                    <div class="week-day"><div class="week-circle done"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="week-label">W</div></div>
+                    <div class="week-day"><div class="week-circle empty"></div><div class="week-label">T</div></div>
+                    <div class="week-day"><div class="week-circle today"></div><div class="week-label">F</div></div>
+                    <div class="week-day"><div class="week-circle empty"></div><div class="week-label">S</div></div>
+                    <div class="week-day"><div class="week-circle empty"></div><div class="week-label">S</div></div>
+                </div>
+                <div class="workout-exercise">
+                    <div class="workout-ex-header">
+                        <div class="workout-ex-name">Bench Press</div>
+                        <div class="workout-ex-badge pr">⭐ PR</div>
+                    </div>
+                    <table class="workout-sets-table">
+                        <tr><th>SET</th><th>WEIGHT</th><th>REPS</th></tr>
+                        <tr><td>1</td><td>185 lb</td><td>4</td></tr>
+                        <tr><td>2</td><td>155 lb</td><td>3</td></tr>
+                    </table>
+                </div>
+                <hr class="workout-divider">
+                <div class="workout-exercise">
+                    <div class="workout-ex-header">
+                        <div class="workout-ex-name">Run</div>
+                        <div class="workout-ex-badge">cardio</div>
+                    </div>
+                    <div style="display:flex;gap:20px;">
+                        <div><div style="font-size:10px;color:rgba(255,255,255,0.4);font-family:'DM Mono',monospace;margin-bottom:2px;">DISTANCE</div><div style="font-size:14px;font-weight:500;color:var(--white);">5 mi</div></div>
+                        <div><div style="font-size:10px;color:rgba(255,255,255,0.4);font-family:'DM Mono',monospace;margin-bottom:2px;">TIME</div><div style="font-size:14px;font-weight:500;color:var(--white);">45 min</div></div>
+                        <div><div style="font-size:10px;color:rgba(255,255,255,0.4);font-family:'DM Mono',monospace;margin-bottom:2px;">PACE</div><div style="font-size:14px;font-weight:500;color:var(--white);">9:00/mi</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SPORTS + FINANCE -->
+<div class="split-section">
+    <div class="split-inner reverse">
+        <div class="split-text reveal">
+            <div class="section-label">Sports & Finance</div>
+            <h2 class="section-title">Your teams.<br><em>Your stocks.</em></h2>
+            <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300;margin-top:16px;">Say your team's name to track live scores, schedules, and standings. Say a ticker to monitor prices and set price alerts. Orca pings you when the game starts or when your stock hits your target.</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;margin-top:12px;">NFL, NBA, MLB, NHL, Premier League, La Liga and more. Real-time data from ESPN and Yahoo Finance.</p>
+        </div>
+        <div class="split-demo reveal">
+            <div class="demo-header"><span class="echo-tag">🏈 Sports</span></div>
+            <div class="demo-body">
+                <div class="sports-team-header">
+                    <div class="sports-team-logo">🏈</div>
+                    <div>
+                        <div class="sports-team-name">Baltimore Ravens</div>
+                        <div class="sports-team-record">2025 Season</div>
+                    </div>
+                    <div class="sports-league-badge">NFL</div>
+                </div>
+                <div class="sports-next">
+                    <div class="sports-next-label">NEXT GAME</div>
+                    <div class="sports-next-game">
+                        <div>
+                            <div class="sports-next-opponent">vs. Pittsburgh Steelers</div>
+                            <div class="sports-next-time">Sun, Sep 7 · 1:00 PM · CBS</div>
+                        </div>
+                        <div class="sports-countdown">5d</div>
+                    </div>
+                </div>
+                <div class="sports-recent-label">RECENT RESULTS</div>
+                <div class="sports-result">
+                    <div class="sports-result-badge w">W</div>
+                    <div class="sports-result-opponent">@ Kansas City Chiefs</div>
+                    <div class="sports-result-score">27–20</div>
+                </div>
+                <div class="sports-result">
+                    <div class="sports-result-badge w">W</div>
+                    <div class="sports-result-opponent">vs. Cleveland Browns</div>
+                    <div class="sports-result-score">34–17</div>
+                </div>
+                <div class="sports-result">
+                    <div class="sports-result-badge l">L</div>
+                    <div class="sports-result-opponent">@ Buffalo Bills</div>
+                    <div class="sports-result-score">21–28</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RECIPE -->
 <section class="recipe-section">
     <div class="recipe-inner">
-        <div class="recipe-text reveal">
+        <div class="reveal">
             <div class="section-label">Recipe capture</div>
-            <h2 class="section-title">Paste a URL.<br><em>Done.</em></h2>
-            <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300;margin-top:16px;">
-                Find a recipe online? Paste the URL into Orca and it automatically pulls the title, prep time, cook time, and every ingredient — formatted as an interactive checklist you can check off as you cook.
-            </p>
-            <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;margin-top:16px;">
-                Works with NYT Cooking, AllRecipes, Serious Eats, Food Network, and thousands of other recipe sites.
-            </p>
+            <h2 class="section-title">Paste a URL.<br><em>Start cooking.</em></h2>
+            <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300;margin-top:16px;">Find a recipe online? Paste the URL into Orca and it automatically pulls the title, prep time, cook time, and every ingredient — formatted as an interactive checklist you check off as you cook.</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;margin-top:16px;">Works with NYT Cooking, AllRecipes, Serious Eats, Food Network, and thousands more.</p>
         </div>
         <div class="recipe-demo reveal">
             <div class="recipe-demo-header">
-                <div class="recipe-demo-url">cooking.nytimes.com/recipes/1021246-chicken-tikka-masala</div>
+                <div class="recipe-demo-url">nytcooking.com/recipes/chicken-tikka-masala</div>
                 <div class="recipe-demo-btn">Fetch Recipe</div>
             </div>
             <div class="recipe-demo-body">
                 <div class="recipe-demo-title">🍽 Chicken Tikka Masala</div>
                 <div class="recipe-demo-meta">Prep: 20m · Cook: 40m · Serves: 4</div>
-                <div class="recipe-demo-label">Instructions</div>
-                <div style="margin-bottom:14px;">
-                    <div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-                        <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-light);min-width:18px;">1.</span>
-                        <span style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;">Marinate chicken in yogurt and spices for 1 hour.</span>
-                    </div>
-                    <div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);">
-                        <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-light);min-width:18px;">2.</span>
-                        <span style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;">Grill or broil chicken until charred. Set aside.</span>
-                    </div>
-                    <div style="display:flex;gap:10px;padding:6px 0;">
-                        <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--teal-light);min-width:18px;">3.</span>
-                        <span style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5;">Simmer tomatoes and cream into a rich sauce.</span>
-                    </div>
-                </div>
                 <div class="recipe-demo-label">Ingredients</div>
-                <div class="recipe-ingredient">
-                    <div class="ingredient-check done"></div>
-                    <span class="ingredient-text done">1½ lbs boneless chicken thighs</span>
-                </div>
-                <div class="recipe-ingredient">
-                    <div class="ingredient-check done"></div>
-                    <span class="ingredient-text done">1 cup plain whole-milk yogurt</span>
-                </div>
-                <div class="recipe-ingredient">
-                    <div class="ingredient-check done"></div>
-                    <span class="ingredient-text done">2 tbsp tikka masala spice blend</span>
-                </div>
-                <div class="recipe-ingredient">
-                    <div class="ingredient-check"></div>
-                    <span class="ingredient-text">1 can (28 oz) crushed tomatoes</span>
-                </div>
-                <div class="recipe-ingredient">
-                    <div class="ingredient-check"></div>
-                    <span class="ingredient-text">1 cup heavy cream</span>
-                </div>
-                <div class="recipe-ingredient">
-                    <div class="ingredient-check"></div>
-                    <span class="ingredient-text">Fresh cilantro, for serving</span>
-                </div>
+                <div class="recipe-ingredient"><div class="ingredient-check done"></div><span class="ingredient-text done">1½ lbs boneless chicken thighs</span></div>
+                <div class="recipe-ingredient"><div class="ingredient-check done"></div><span class="ingredient-text done">1 cup plain whole-milk yogurt</span></div>
+                <div class="recipe-ingredient"><div class="ingredient-check done"></div><span class="ingredient-text done">2 tbsp tikka masala spice blend</span></div>
+                <div class="recipe-ingredient"><div class="ingredient-check"></div><span class="ingredient-text">1 can (28 oz) crushed tomatoes</span></div>
+                <div class="recipe-ingredient"><div class="ingredient-check"></div><span class="ingredient-text">1 cup heavy cream</span></div>
+                <div class="recipe-ingredient"><div class="ingredient-check"></div><span class="ingredient-text">Fresh cilantro, for serving</span></div>
             </div>
-            <div class="recipe-arrow">
-                <div class="recipe-arrow-line">
-                    <span>3/6 ingredients checked</span>
-                    <span>·</span>
-                    <span style="color:var(--teal-light);">Saved to Cooking 👨‍🍳</span>
-                </div>
+            <div class="recipe-footer">
+                <span>3/6 checked</span><span>·</span><span style="color:var(--teal-light);">Grocery Mode active 🛒</span>
             </div>
         </div>
     </div>
@@ -540,7 +695,7 @@
             <div class="step reveal">
                 <div class="step-number">03</div>
                 <div class="step-title">It finds you</div>
-                <div class="step-desc">Pings fire at the right moment. Or search anytime — right from your iPhone home screen.</div>
+                <div class="step-desc">Pings fire at the right moment. Or search anytime — right from your iPhone home screen via Spotlight.</div>
                 <div class="step-example">🔔 "Call the electrician" — Monday, 9:00 AM</div>
             </div>
         </div>
@@ -560,7 +715,11 @@
         <div class="echo-pill">🏠 Home</div>
         <div class="echo-pill">💰 Finance</div>
         <div class="echo-pill">🐾 Pets</div>
-        <span class="echo-more">+ 14 more</span>
+        <div class="echo-pill">💪 Workout</div>
+        <div class="echo-pill">🏈 Sports</div>
+        <div class="echo-pill">🎁 Gifts</div>
+        <div class="echo-pill">🍽️ Dining</div>
+        <span class="echo-more">+ 10 more</span>
     </div>
 </section>
 
@@ -571,7 +730,7 @@
         <div class="quotes-grid">
             <div class="quote-card reveal">
                 <div class="quote-stars">★★★★★</div>
-                <div class="quote-text">"I used to text myself reminders that I'd never look at. Orca actually brings them back at the right time. Game changer."</div>
+                <div class="quote-text">"I used to text myself reminders I'd never look at. Orca actually brings them back at the right time. Game changer."</div>
                 <div class="quote-author">Beta tester · New York</div>
             </div>
             <div class="quote-card reveal">
@@ -591,9 +750,9 @@
 <section class="cta-section" id="download">
     <div class="cta-bg"></div>
     <h2 class="cta-title">Start dropping<br><em>memories today.</em></h2>
-    <p class="cta-sub">Takes 30 seconds to set up.</p>
+    <p class="cta-sub">Takes 30 seconds to set up. Free to download.</p>
     <div class="cta-actions">
-        <a href="#" class="app-store-btn">
+        <a href="#" class="app-store-btn" id="app-store-link">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="#0B1D33"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
             <div class="app-store-label"><small>Download on the</small><strong>App Store</strong></div>
         </a>
@@ -608,12 +767,13 @@
     <ul class="footer-links">
         <li><a href="/privacy">Privacy Policy</a></li>
         <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/support">Support</a></li>
         <li><a href="mailto:support@orcadrop.app">Contact</a></li>
     </ul>
     <div class="footer-copy">© 2026 Orca. All rights reserved.</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, i) => {
@@ -628,4 +788,10 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
- 
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
