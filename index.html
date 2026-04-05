@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <style>
         :root {
             --navy: #0B1D33;
@@ -175,10 +177,10 @@
 
         /* TRAVEL MAP */
         .travel-hotel-card { background: rgba(255,255,255,0.06); border-radius: 14px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.08); }
-        .travel-map { height: 130px; background: linear-gradient(135deg, #1a3a2a 0%, #0d2a1a 50%, #162a20 100%); position: relative; overflow: hidden; }
-        .map-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 20px 20px; }
-        .map-road-h { position: absolute; height: 3px; background: rgba(255,255,255,0.12); border-radius: 2px; }
-        .map-road-v { position: absolute; width: 3px; background: rgba(255,255,255,0.12); border-radius: 2px; }
+        .travel-map { height: 130px; background: linear-gradient(135deg, #1e3d2d 0%, #162e1e 50%, #1a3225 100%); position: relative; overflow: hidden; }
+        .map-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 12px 12px; }
+        .map-road-h { position: absolute; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; }
+        .map-road-v { position: absolute; width: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; }
         .map-park { position: absolute; border-radius: 6px; background: rgba(82,183,136,0.15); border: 1px solid rgba(82,183,136,0.2); }
         .map-water { position: absolute; border-radius: 50%; background: rgba(42,100,180,0.3); }
         .map-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); display: flex; flex-direction: column; align-items: center; }
@@ -383,7 +385,7 @@
                 <div class="phone-sub">43 memories · 83°F ⛅</div>
                 <div class="phone-memory">
                     <div class="phone-memory-header"><span class="phone-memory-emoji">✈️</span><span class="phone-memory-echo">TRAVEL</span></div>
-                    <div class="phone-memory-text">Kimpton Gray Hotel · Check-in Apr 16</div>
+                    <div class="phone-memory-text">Four Seasons Washington, DC · Check-in Apr 16</div>
                     <div class="phone-memory-date">🔔 Reminder Apr 15 at noon</div>
                 </div>
                 <div class="phone-memory">
@@ -460,22 +462,10 @@
             </div>
             <div class="demo-body">
                 <div class="travel-hotel-card">
-                    <div class="travel-map">
-                        <div class="map-grid"></div>
-                        <div class="map-road-h" style="top:40%;left:0;right:0;"></div>
-                        <div class="map-road-h" style="top:65%;left:0;right:0;opacity:0.6;"></div>
-                        <div class="map-road-v" style="left:30%;top:0;bottom:0;"></div>
-                        <div class="map-road-v" style="left:60%;top:0;bottom:0;opacity:0.6;"></div>
-                        <div class="map-park" style="top:8%;left:68%;width:25%;height:20%;opacity:0.5;"></div>
-                        <div class="map-water" style="top:60%;right:-15%;width:35%;height:45%;opacity:0.35;border-radius:40% 0 0 40%;"></div>
-                        <div class="map-pin">
-                            <div class="map-pin-dot"><div class="map-pin-inner"></div></div>
-                            <div class="map-label">Kimpton Gray Hotel</div>
-                        </div>
-                    </div>
+                    <div id="hotel-map" style="height:130px;width:100%;border-radius:0;"></div>
                     <div class="travel-hotel-info">
-                        <div class="travel-hotel-name">🏨 Kimpton Gray Hotel</div>
-                        <div class="travel-hotel-addr">122 W. Monroe Street, Chicago, IL</div>
+                        <div class="travel-hotel-name">🏨 Four Seasons Hotel Washington, DC</div>
+                        <div class="travel-hotel-addr">2800 Pennsylvania Ave NW, Washington, DC</div>
                         <div class="travel-dates">
                             <div class="travel-date-box">
                                 <div class="travel-date-label">Check-in</div>
@@ -792,6 +782,33 @@
             if (target) target.scrollIntoView({ behavior: 'smooth' });
         });
     });
+</script>
+<script>
+    // Initialize Leaflet map for Kimpton Gray Hotel
+    const hotelMap = L.map('hotel-map', {
+        center: [38.9047, -77.0596],
+        zoom: 15,
+        zoomControl: false,
+        scrollWheelZoom: false,
+        dragging: false,
+        touchZoom: false,
+        doubleClickZoom: false,
+        boxZoom: false,
+        keyboard: false
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: ''
+    }).addTo(hotelMap);
+
+    const hotelIcon = L.divIcon({
+        html: '<div style="width:14px;height:14px;background:#E76F51;border:2px solid white;border-radius:50%;box-shadow:0 2px 6px rgba(231,111,81,0.6);"></div>',
+        iconSize: [14, 14],
+        iconAnchor: [7, 7],
+        className: ''
+    });
+
+    L.marker([38.9047, -77.0596], { icon: hotelIcon }).addTo(hotelMap);
 </script>
 </body>
 </html>
