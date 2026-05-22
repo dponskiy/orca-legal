@@ -147,24 +147,6 @@
         .workout-sets-table td { font-size: 13px; color: rgba(255,255,255,0.7); padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .workout-sets-table td:last-child { text-align: right; color: var(--white); font-weight: 500; }
         .workout-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 12px 0; }
-        .sports-team-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-        .sports-team-logo { width: 36px; height: 36px; background: rgba(231,111,81,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-        .sports-team-name { font-size: 16px; font-weight: 500; color: var(--white); }
-        .sports-team-record { font-size: 11px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; }
-        .sports-league-badge { margin-left: auto; font-size: 10px; font-family: 'DM Mono', monospace; background: rgba(255,255,255,0.08); padding: 3px 8px; border-radius: 100px; color: rgba(255,255,255,0.5); }
-        .sports-next { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px; margin-bottom: 12px; }
-        .sports-next-label { font-size: 10px; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; margin-bottom: 6px; }
-        .sports-next-game { display: flex; align-items: center; justify-content: space-between; }
-        .sports-next-opponent { font-size: 14px; font-weight: 500; color: var(--white); }
-        .sports-next-time { font-size: 11px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; margin-top: 2px; }
-        .sports-countdown { background: var(--coral); color: white; font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 100px; }
-        .sports-recent-label { font-size: 10px; font-family: 'DM Mono', monospace; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; margin-bottom: 8px; }
-        .sports-result { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .sports-result-badge { width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
-        .sports-result-badge.w { background: rgba(82,183,136,0.2); color: var(--seafoam); }
-        .sports-result-badge.l { background: rgba(231,111,81,0.2); color: var(--coral); }
-        .sports-result-opponent { font-size: 13px; color: rgba(255,255,255,0.65); flex: 1; }
-        .sports-result-score { font-size: 13px; font-weight: 500; color: var(--white); }
         .recipe-section { padding: 100px 48px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
         .recipe-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .recipe-demo { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; overflow: hidden; }
@@ -261,7 +243,7 @@
     <div class="hero-grid"></div>
     <div class="hero-badge">
         <div class="hero-badge-dot"></div>
-        v2.0 · Now with Apple Intelligence
+        v2.2 · Widgets, badges & morning briefings
     </div>
     <h1 class="hero-title">Everything you forget.<br><em>Finally remembered.</em></h1>
     <p class="hero-subtitle">Drop a thought in seconds. Orca sorts it, reminds you, and brings it back exactly when you need it.</p>
@@ -316,7 +298,6 @@
     <p class="section-sub">No forms. No friction. Just speak, type, or snap — Orca handles the rest.</p>
     <div class="features-grid">
 
-        <!-- Apple Intelligence — NEW v2.0 -->
         <div class="feature-card large reveal">
             <div class="feature-icon">🧠</div>
             <div class="feature-title">Apple Intelligence, built in</div>
@@ -489,45 +470,6 @@
     </div>
 </div>
 
-<!-- SPORTS + FINANCE -->
-<div class="split-section">
-    <div class="split-inner reverse">
-        <div class="split-text reveal">
-            <div class="section-label">Sports & Finance</div>
-            <h2 class="section-title">Your teams.<br><em>Your stocks.</em></h2>
-            <p style="font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;font-weight:300;margin-top:16px;">Say your team's name to track live scores, schedules, and standings. Say a ticker to monitor prices and set price alerts. Orca pings you when the game starts or when your stock hits your target.</p>
-            <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.7;font-weight:300;margin-top:12px;">NFL, NBA, MLB, NHL, Premier League, La Liga and more. Real-time data from ESPN and Yahoo Finance.</p>
-        </div>
-        <div class="split-demo reveal">
-            <div class="demo-header"><span class="echo-tag">🏈 Sports</span></div>
-            <div class="demo-body">
-                <div class="sports-team-header">
-                    <div class="sports-team-logo">🦅</div>
-                    <div>
-                        <div class="sports-team-name">Baltimore Ravens</div>
-                        <div class="sports-team-record">2025 Season</div>
-                    </div>
-                    <div class="sports-league-badge">NFL</div>
-                </div>
-                <div class="sports-next">
-                    <div class="sports-next-label">NEXT GAME</div>
-                    <div class="sports-next-game">
-                        <div>
-                            <div class="sports-next-opponent">vs. Pittsburgh Steelers</div>
-                            <div class="sports-next-time">Sun, Sep 7 · 1:00 PM · CBS</div>
-                        </div>
-                        <div class="sports-countdown">5d</div>
-                    </div>
-                </div>
-                <div class="sports-recent-label">RECENT RESULTS</div>
-                <div class="sports-result"><div class="sports-result-badge w">W</div><div class="sports-result-opponent">@ Kansas City Chiefs</div><div class="sports-result-score">27–20</div></div>
-                <div class="sports-result"><div class="sports-result-badge w">W</div><div class="sports-result-opponent">vs. Cleveland Browns</div><div class="sports-result-score">34–17</div></div>
-                <div class="sports-result"><div class="sports-result-badge l">L</div><div class="sports-result-opponent">@ Buffalo Bills</div><div class="sports-result-score">21–28</div></div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- RECIPE / GROCERY -->
 <section class="recipe-section">
     <div class="recipe-inner">
@@ -601,10 +543,9 @@
         <div class="echo-pill">💰 Finance</div>
         <div class="echo-pill">🐾 Pets</div>
         <div class="echo-pill">💪 Workout</div>
-        <div class="echo-pill">🏈 Sports</div>
         <div class="echo-pill">🎁 Gifts</div>
         <div class="echo-pill">🍽️ Dining</div>
-        <span class="echo-more">+ 10 more</span>
+        <span class="echo-more">+ 11 more</span>
     </div>
 </section>
 
